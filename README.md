@@ -1,80 +1,83 @@
-# Unit 11 Express Homework: Note Taker
+![License: ISC](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Description
+# **Note Taker**
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+## **Description**
+***Note Taker*** is a **Node/Express** application intented for users that need to keep track of a lot of information. It is easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed. ***Note Taker*** allows users to write and save notes, as well as to delete previously written notes.
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
+## **Table of Contents**
+* [Description](##Description)
+* [Installation](##Installation)
+* [Usage](##Usage)
+* [License](##License)
+* [Contributing](##Contributing)
+* [Tests](##Tests)
+* [Questions](##Questions)
 
-* The following HTML routes should be created:
+## **Installation**
+There is no installation process for Note Taker, the app can be found on it's deployed Website at [Note Taker.](https://scastanedamunoz-note-taker.herokuapp.com). However, all the app code is available in the [Git Hub Repository](https://github.com/SCastanedaMunoz/Note-Taker). If you decide to clone the Reposityro, you will have to open the project on your terminal and run the npm i or npm install process. This will fetch and install any required npm packages in order to run the application. ***Note Taker*** was built using Node 12.8.2 and npm 6.14.5. 
 
-  * GET `/notes` - Should return the `notes.html` file.
+## **Usage**
+As mentioned before, The main purpose of this application is for users to keep track of a lot of informatoin in a neat and centralized manner. Here are some screenshots of the different areas of the app and how they can be used:
 
-  * GET `*` - Should return the `index.html` file
+### **Home Page**
+First thing user's see when they open the app.
+![Home Page](./docs/homePage.png)
 
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+### **Main Page**
+After clicking *Get Started*, users get taken to the main area of the app where they can write, save and see old notes.
+![Main Page](./docs/mainPage.png)
 
-* The following API routes should be created:
+### **User Input**
+When users type out a note, they can save it on their history, so they can come back to them later.
+![User Input](./docs/userInput.png)
 
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+### **Visualizing Previous Notes**
+When visualizing a previous note, user's will not be able to modify the contents but they will get all of their info back.
+![User Input](./docs/visualizeNotes.png)
 
-  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+## **License**
 
-  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+This project is under the MIT License:
 
-## User Story
+    Copyright (c) 2020 Santiago Castaneda Munoz
 
-AS A user, I want to be able to write and save notes
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
 
-I WANT to be able to delete notes I've written before
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
 
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
 
-## Business Context
+## **Contributing**
+If you wish to contribute to the project, make sure to read the following guidelines:
 
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+* Any found bugs should be reported to the repository Issues Tab.
+* If you wish your changes to be merged into the app, make sure to create well written, documented and testable code. ***Include Unit Tests***
+* If you wish to add a new feature, make sure to include *user stories* as how your feature will help the app. 
+* Create a pull request, after proper review it will be merged into the Git Repository
 
-## Acceptance Criteria
+## **Tests**
+As of right now, the only way to test the application is by running the node serve.js file which triggers the app environment locally. In the future, proper unit testing will be added to ensure proper Software Development practices.
 
-Application should allow users to create and save notes.
+## **Questions**
+If you have any questions regarding this app, feel free to contact me through my email, the [README Generator Repo](https://github.com/SCastanedaMunoz/README-Generator). All questions will be answered in a reasonable amount of time.
 
-Application should allow users to view previously saved notes.
+### ***GitHub Profile***
+https://github.com/SCastanedaMunoz
 
-Application should allow users to delete previously saved notes.
+### ***Email Contact***
+[santiagocm98@hotmail.com](mailto:santiagocm98@hotmail.com)
 
-## Deploying the App
-
-You will not be able to deploy your server side code on GitHub pages. This app should be deployed on Heroku. Carefully follow the [Heroku Guide](../04-Important/HerokuGuide.md) for getting your app deployed on Heroku.
-
-- - -
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application. This should be the link to the url provided by Heroku. Be sure not to submit a link to the Heroku dashboard.
-
-* The URL of the GitHub repository
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+***
