@@ -33,7 +33,8 @@ module.exports = function(app) {
             var removeIndex = notes.map(item => item.id).indexOf(id);
             ~removeIndex && notes.splice(removeIndex, 1);
             return writeDB(JSON.stringify(notes));
-        });
+        })
+        .then(response => res.json(true));
     });
 
     function readDB() {
